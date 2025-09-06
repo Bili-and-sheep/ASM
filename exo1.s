@@ -1,4 +1,4 @@
-%define A 2
+%define A 4
 %define B 2
 
 section .bss

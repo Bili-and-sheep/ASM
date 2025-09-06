@@ -14,14 +14,14 @@ _start:
     
     mov     [outbuf], al
     mov     byte [outbuf+1], 10
-    mov     rax, 1            ; SYS_write
-    mov     rdi, 1            ; fd = stdout
-    mov     rsi, outbuf       ; buffer
-    mov     rdx, 2            ; longueur = 2 (chiffre + '\n')
+    mov     rax, 1
+    mov     rdi, 1
+    mov     rsi, outbuf
+    mov     rdx, 2
     
     syscall
 
-    mov     rax, 60           ; SYS_exit
-    xor     rdi, rdi          ; code de retour = 0
+    mov     rax, 60
+    xor     rdi, rdi
     
     syscall

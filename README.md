@@ -13,3 +13,7 @@ ld FileName.o -o FileName
 ```bash
 echo $?
 ```
+
+```bash
+objdump -M intel FileName.out -d
+```

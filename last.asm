@@ -15,6 +15,8 @@ print:
     leave           ;epilogue
     ret
 
+_start:
+    call print
 exit:
     ; push rbp
     ; mov rbp, rsp

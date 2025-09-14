@@ -2,18 +2,18 @@ section .text
     global _start
 
 _start:
-    mov rax, 4
-    add rax, 2
+    mov rax, 3
+    add rax, 4
 
-    add rax, 30h  ;30h = 0 en ascii , on ajoute 30h pour convertir le nombre en ascii, ex : 6 + 30h = 36h = 6 en ascii
+    add rax, 30h
     push rax
 
-    mov rax, 1 ;write
-    mov rdi, 1 ;stdout
-    mov rsi, rsp ;adresse du buffer
-    mov rdx, 1 ;taille du buffer en octets
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, rsp
+    mov rdx, 1
     syscall
 
-    mov rax, 60 ;exit syscall number in rax
-    xor rdi, rdi ;code de retour = 0
+    mov rax, 60
+    mov rdi, 0
     syscall

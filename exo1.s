@@ -1,27 +1,19 @@
-%define A 4
-%define B 2
-
-section .bss
-outbuf  resb 2
-
 section .text
-global _start
+    global _start
 
 _start:
-    mov     rax, A
-    add     rax, B
-    add     al, '0'
-    
-    mov     [outbuf], al
-    mov     byte [outbuf+1], 10
-    mov     rax, 1
-    mov     rdi, 1
-    mov     rsi, outbuf
-    mov     rdx, 2
-    
+    mov rax, 4
+    add rax, 2
+
+    add rax, 30h.  ;30h = 0 en ascii , on ajoute 30h pour convertir le nombre en ascii, ex : 6 + 30h = 36h = 6 en ascii
+    push rax
+
+    mov rax, 1 ;write
+    mov rdi, 1 ;stdout
+    mov rsi, rsp ;adresse du buffer
+    mov rdx, 1 ;taille du buffer en octets
     syscall
 
-    mov     rax, 60
-    xor     rdi, rdi
-    
+    mov rdi, 60 ;exit
+    mov rsi, 0 ;code de retour
     syscall

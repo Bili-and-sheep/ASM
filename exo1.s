@@ -14,6 +14,6 @@ _start:
     mov rdx, 1 ;taille du buffer en octets
     syscall
 
-    mov rdi, 60 ;exit
-    mov rsi, 0 ;code de retour
+    mov rax, 60 ;exit syscall number in rax
+    xor rdi, rdi ;code de retour = 0
     syscall
